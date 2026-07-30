@@ -1,79 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pocket Memory — an interactive wearable archive and performance." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Pocket Memory — an interactive archive of objects carried in a coat." />
   <title>Pocket Memory</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="app-shell">
-    <header class="intro">
-      <p class="eyebrow">wearable archive / digital performance</p>
-      <h1>Pocket Memory</h1>
-      <p class="intro-copy">
-        Open the coat, remove its objects, and rearrange the fragments into a memory map.
-      </p>
-      <div class="controls" aria-label="Performance controls">
-        <button id="startPerformance" class="primary">Start performance</button>
-        <button id="resetAll">Reset</button>
-        <button id="soundToggle" aria-pressed="true">Sound on</button>
+  <main>
+    <header>
+      <div>
+        <h1>Pocket Memory</h1>
+        <p>Fragments carried in pockets.</p>
       </div>
+      <nav aria-label="controls">
+        <button id="startPerformance">play</button>
+        <button id="resetAll">clear</button>
+        <button id="soundToggle" aria-pressed="true">sound</button>
+      </nav>
     </header>
 
-    <section class="stage" aria-label="Interactive coat and memory table">
-      <div class="coat-zone">
-        <div class="coat-wrap" aria-label="Black puffer coat with clickable pockets">
-          <div class="coat" id="coat">
-            <div class="collar"></div>
-            <div class="zipper"></div>
-            <button class="pocket pocket-a" data-pocket="0" aria-label="Open upper left pocket"></button>
-            <button class="pocket pocket-b" data-pocket="1" aria-label="Open chest zipper pocket"></button>
-            <button class="pocket pocket-c" data-pocket="2" aria-label="Open lower left pocket"></button>
-            <button class="pocket pocket-d" data-pocket="3" aria-label="Open lower right mesh pocket"></button>
-            <button class="pocket pocket-e" data-pocket="4" aria-label="Open bottom pocket"></button>
-            <button class="pocket pocket-f" data-pocket="5" aria-label="Open sleeve pocket"></button>
-          </div>
-        </div>
-        <p class="coat-instruction">Click a pocket to release a memory.</p>
+    <section class="coat-stage" aria-label="photographic black coat">
+      <div class="coat-object">
+        <img src="assets/jacket.webp" alt="Black puffer coat with many pockets" />
+        <button class="pocket p1" data-pocket="0" aria-label="open upper pocket"></button>
+        <button class="pocket p2" data-pocket="1" aria-label="open chest pocket"></button>
+        <button class="pocket p3" data-pocket="2" aria-label="open lower left pocket"></button>
+        <button class="pocket p4" data-pocket="3" aria-label="open lower right pocket"></button>
+        <button class="pocket p5" data-pocket="4" aria-label="open bottom pocket"></button>
+        <button class="pocket p6" data-pocket="5" aria-label="open sleeve pocket"></button>
       </div>
-
-      <div class="table-zone">
-        <div class="table-header">
-          <div>
-            <p class="eyebrow">memory surface</p>
-            <h2>Loose Map</h2>
-          </div>
-          <p id="progressText">0 / 18 objects revealed</p>
-        </div>
-        <div id="memoryTable" class="memory-table" aria-live="polite">
-          <div class="table-placeholder" id="tablePlaceholder">
-            Objects will arrive here. Drag them into your own order.
-          </div>
-        </div>
-      </div>
+      <p class="hint">touch a pocket</p>
     </section>
 
-    <section class="memory-log" aria-label="Current memory description">
-      <p class="eyebrow">current fragment</p>
-      <h2 id="memoryTitle">The coat is still closed.</h2>
-      <p id="memoryDescription">The performance begins before the first object appears.</p>
+    <section class="archive">
+      <div class="archive-head">
+        <span id="progressText">0 / 18</span>
+        <span id="memoryTitle">closed</span>
+      </div>
+      <div id="memoryTable" class="memory-table" aria-live="polite">
+        <p id="tablePlaceholder">Objects will gather here.</p>
+      </div>
+      <p id="memoryDescription" class="description">Rearrange them as you remember.</p>
     </section>
-
-    <footer>
-      <p>Each pocket holds a trace of time.</p>
-    </footer>
   </main>
 
   <template id="memoryTemplate">
-    <article class="memory-card" draggable="true">
-      <div class="memory-icon" aria-hidden="true"></div>
-      <div>
-        <span class="memory-number"></span>
-        <h3 class="memory-name"></h3>
-        <p class="memory-note"></p>
-      </div>
+    <article class="memory-piece">
+      <div class="cutout" aria-hidden="true"></div>
+      <span class="label"></span>
+      <span class="note"></span>
     </article>
   </template>
 
