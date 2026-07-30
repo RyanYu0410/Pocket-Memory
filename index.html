@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Pocket Memory — an interactive archive of objects carried in a coat." />
   <title>Pocket Memory</title>
-  <link rel="preload" as="image" href="assets/jacket-hq.webp?v=6" />
-  <link rel="stylesheet" href="style2.css?v=6" />
+  <link rel="preload" as="image" href="assets/jacket-hq.webp?v=7" />
+  <link rel="preload" as="image" href="assets/objects/metro-card.webp?v=7" />
+  <link rel="preload" as="image" href="assets/objects/key.webp?v=7" />
+  <link rel="stylesheet" href="css/base.css?v=7" />
+  <link rel="stylesheet" href="css/coat.css?v=7" />
+  <link rel="stylesheet" href="css/archive.css?v=7" />
 </head>
 <body>
   <main>
@@ -24,13 +28,13 @@
 
     <section class="coat-stage" aria-label="photographic black coat">
       <div class="coat-object">
-        <img src="assets/jacket-hq.webp?v=6" alt="Black puffer coat with many pockets" width="660" height="800" decoding="async" fetchpriority="high" />
-        <button class="pocket p1" data-pocket="0" aria-label="open upper pocket"></button>
-        <button class="pocket p2" data-pocket="1" aria-label="open chest pocket"></button>
-        <button class="pocket p3" data-pocket="2" aria-label="open lower left pocket"></button>
-        <button class="pocket p4" data-pocket="3" aria-label="open lower right pocket"></button>
-        <button class="pocket p5" data-pocket="4" aria-label="open bottom pocket"></button>
-        <button class="pocket p6" data-pocket="5" aria-label="open sleeve pocket"></button>
+        <img src="assets/jacket-hq.webp?v=7" alt="Black puffer coat with many pockets" width="660" height="900" decoding="async" fetchpriority="high" />
+        <button class="pocket p1" data-pocket="0" aria-label="open left cargo pocket"></button>
+        <button class="pocket p2" data-pocket="1" aria-label="open right cargo pocket"></button>
+        <button class="pocket p3" data-pocket="2" aria-label="open left sleeve pocket"></button>
+        <button class="pocket p4" data-pocket="3" aria-label="open right sleeve pocket"></button>
+        <button class="pocket p5" data-pocket="4" aria-label="open left forearm pocket"></button>
+        <button class="pocket p6" data-pocket="5" aria-label="open right forearm pocket"></button>
       </div>
       <p class="hint">touch a pocket</p>
     </section>
@@ -55,9 +59,9 @@
     </article>
   </template>
 
-  <script src="js/data.js?v=6"></script>
-  <script src="js/sound.js?v=6"></script>
-  <script src="js/drag.js?v=6"></script>
-  <script src="js/app.js?v=6"></script>
+  <script src="js/data.js?v=7"></script>
+  <script src="js/sound.js?v=7"></script>
+  <script src="js/drag.js?v=7"></script>
+  <script src="js/app.js?v=7"></script>
 </body>
 </html>

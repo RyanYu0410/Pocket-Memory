@@ -26,7 +26,7 @@ The project explores:
 
 ## Technology
 
-The project is a static website built with HTML, CSS, and vanilla JavaScript. Board components are stored as separate image assets under `assets/` (jacket + one file per object). Script logic is split across files in `js/`. It has no build step or external dependencies.
+The project is a static website built with HTML, CSS, and vanilla JavaScript. Board components are stored as separate image assets under `assets/` (jacket + one file per object). Styles live in `css/`, and script logic in `js/`. It has no build step or external dependencies.
 
 ## Run locally
 

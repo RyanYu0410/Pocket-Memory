@@ -1,0 +1,63 @@
+.coat-stage {
+  min-height: 72vh;
+  display: grid;
+  place-items: center;
+  padding: 30px 0 10px;
+}
+
+.coat-object {
+  position: relative;
+  width: min(520px, 78vw);
+  filter: drop-shadow(0 28px 24px rgba(0, 0, 0, .16));
+}
+
+.coat-object img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+.pocket {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: background .25s, box-shadow .25s;
+}
+
+.pocket:hover,
+.pocket:focus-visible {
+  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .16);
+}
+
+.pocket.opened { pointer-events: none; }
+
+/* Hit areas aligned to the jacket cutout pockets */
+.p1 { left: 18%; top: 54%; width: 28%; height: 18%; } /* left cargo */
+.p2 { left: 54%; top: 54%; width: 28%; height: 18%; } /* right cargo */
+.p3 { left: 4%; top: 28%; width: 16%; height: 18%; }  /* left sleeve zip */
+.p4 { left: 80%; top: 28%; width: 16%; height: 18%; } /* right sleeve zip */
+.p5 { left: 6%; top: 52%; width: 14%; height: 16%; }  /* left forearm */
+.p6 { left: 80%; top: 52%; width: 14%; height: 16%; } /* right forearm */
+
+.hint {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.performance-running .coat-object {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  50% { transform: scale(1.008); }
+}
+
+@media (max-width: 700px) {
+  .coat-stage { min-height: 58vh; }
+}
