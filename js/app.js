@@ -41,7 +41,7 @@
     piece.dataset.memoryIndex = i;
     piece.style.setProperty("--r", `${(Math.random() * 7 - 3.5).toFixed(1)}deg`);
 
-    cutout.src = `${memory.asset}?v=7`;
+    cutout.src = `${memory.asset}?v=8`;
     cutout.alt = memory.name;
     cutout.decoding = "async";
 
