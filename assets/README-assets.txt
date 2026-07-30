@@ -1,0 +1,1 @@
+The project uses transparent WebP assets stored in this folder: jacket.webp and objects-sprite.webp.
