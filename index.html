@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Pocket Memory — an interactive archive of objects carried in a coat." />
   <title>Pocket Memory</title>
-  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="style2.css?v=3" />
 </head>
 <body>
   <main>
@@ -23,7 +23,7 @@
 
     <section class="coat-stage" aria-label="photographic black coat">
       <div class="coat-object">
-        <img src="assets/jacket.webp" alt="Black puffer coat with many pockets" />
+        <img src="assets/jacket.webp?v=3" alt="Black puffer coat with many pockets" decoding="async" fetchpriority="high" />
         <button class="pocket p1" data-pocket="0" aria-label="open upper pocket"></button>
         <button class="pocket p2" data-pocket="1" aria-label="open chest pocket"></button>
         <button class="pocket p3" data-pocket="2" aria-label="open lower left pocket"></button>
@@ -54,6 +54,6 @@
     </article>
   </template>
 
-  <script src="script2.js"></script>
+  <script src="script2.js?v=3"></script>
 </body>
 </html>
