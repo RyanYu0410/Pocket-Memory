@@ -6,7 +6,7 @@ Each pocket contains small fragments of everyday experience: a metro card, a cof
 
 ## Experience
 
-- Click any pocket to reveal three objects.
+- Click any pocket to reveal its objects.
 - Drag the revealed objects across the memory surface.
 - Select an object to revisit its description.
 - Use **Start performance** to run the complete sequence automatically.
@@ -26,7 +26,7 @@ The project explores:
 
 ## Technology
 
-The project is a static website built with HTML, CSS, and vanilla JavaScript. It has no build step or external dependencies.
+The project is a static website built with HTML, CSS, and vanilla JavaScript. Board components are stored as separate image assets under `assets/` (jacket + one file per object). Styles live in `css/`, and script logic in `js/`. It has no build step or external dependencies.
 
 ## Run locally
 
