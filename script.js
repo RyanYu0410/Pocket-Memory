@@ -52,15 +52,15 @@ function tone(index) {
   const context = new AudioContext();
   const oscillator = context.createOscillator();
   const gain = context.createGain();
-  oscillator.type = index % 3 === 0 ? "sine" : "triangle";
-  oscillator.frequency.value = 190 + index * 17;
+  oscillator.type = "sine";
+  oscillator.frequency.value = 180 + index * 12;
   gain.gain.setValueAtTime(0.0001, context.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.08, context.currentTime + 0.02);
-  gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.42);
+  gain.gain.exponentialRampToValueAtTime(0.035, context.currentTime + 0.04);
+  gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.62);
   oscillator.connect(gain);
   gain.connect(context.destination);
   oscillator.start();
-  oscillator.stop(context.currentTime + 0.45);
+  oscillator.stop(context.currentTime + 0.65);
   oscillator.addEventListener("ended", () => context.close());
 }
 
@@ -80,7 +80,6 @@ function revealMemory(index) {
   const memory = memories[index];
   const card = template.content.firstElementChild.cloneNode(true);
   card.dataset.memoryIndex = index;
-  card.style.setProperty("--rotation", `${(Math.random() * 7 - 3.5).toFixed(1)}deg`);
   card.querySelector(".memory-icon").textContent = memory.icon;
   card.querySelector(".memory-number").textContent = String(index + 1).padStart(2, "0");
   card.querySelector(".memory-name").textContent = memory.name;
@@ -111,7 +110,7 @@ function openPocket(button) {
   button.classList.add("opened");
   const sequence = pocketSequences[Number(button.dataset.pocket)];
   sequence.forEach((memoryIndex, i) => {
-    window.setTimeout(() => revealMemory(memoryIndex), i * 260);
+    window.setTimeout(() => revealMemory(memoryIndex), i * 420);
   });
 }
 
@@ -156,7 +155,7 @@ function startPerformance() {
   startButton.disabled = true;
   startButton.textContent = "Performance running";
   memoryTitle.textContent = "The coat begins to remember.";
-  memoryDescription.textContent = "Six pockets open in sequence. Each one releases three fragments.";
+  memoryDescription.textContent = "Six pockets open slowly. Each one releases three fragments.";
 
   let pocketIndex = 0;
   performanceTimer = window.setInterval(() => {
@@ -172,7 +171,7 @@ function startPerformance() {
     }
     openPocket(pocketButtons[pocketIndex]);
     pocketIndex += 1;
-  }, 1450);
+  }, 2100);
 }
 
 function reset(announce = true) {
